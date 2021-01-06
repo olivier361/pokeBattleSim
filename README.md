@@ -1,15 +1,20 @@
 # pokeBattleSim
-A little website project that uses JavaScript, jQuery, a RESTful web API and JSON data to simulate Pokemon battles.
+__OVERVIEW:__
+
+Pokemon Battle Simulator is a little website project that uses JavaScript, jQuery, a RESTful web API and JSON data to simulate Pokemon battles.
 
 __LINK TO THE SITE:__
+
 http://webhome.csc.uvic.ca/~oliviergg/project2/final/html/pokeBattleSim.html
 
 __PROJECT BACKGROUND:__
+
 The project was done in the context of my "CSC 130: World Wide Web and Mobile Applications" class at the University of Victoria.
 We were tasked to build a website that showcases our knowledge of making interactive websites
 using JavaScript and jQuery while incorporating a web based RESTful API and JSON data parsing.
 
 __HOW TO USE THE SITE:__
+
 On the site, you are presented with two input fields where you can enter Pokemon names and two sliders to chose a level for the respective Pokemon.
 NOTE: you can also click on the "Random Battle" button which will initiate a battle by selecting two random pokemon with random levels.
 
@@ -20,6 +25,7 @@ the "Turn On Manuall Scrolling" button and scroll line by line by clicking the "
 Present below the pokedex, you will find additional information on how to use the site.
 
 __HOW IT WORKS:__
+
 You'll find the html, css, JavaScript (js) and image files used for the site in their respective folders.
 
 All buttons and inputs on the site are linked to interactive JavaScript functions which in turn either set variables to set up the Pokemon battle
@@ -35,5 +41,6 @@ For those interested in seeing the JSON data associated with the chosen Pokemon,
 at the bottom of the site page will display the raw JSON data returned by PokeAPI for both Pokemon.
 
 __DISCLAIMER:__
+
 Images used in the project may be subject to copyright and are used under Fair Use for educational purposes. They are to be used for personal and non-commercial use only.
 
