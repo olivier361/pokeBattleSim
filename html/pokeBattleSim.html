@@ -1,0 +1,126 @@
+<!-- pokeBattleSim.html -->
+
+<html>
+<head>
+	<meta charset="UTF8"></meta>
+	<script src="../js/pokeBattleSim.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link href="../css/pokeBattleSim.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div id="all">
+<h1>Pokemon Battle Simulator</h1>
+<p>See which Pokemon is likely to win in battle!</p>
+
+<div class="row">
+	<div class="column">
+		<p>Enter your Pokemon's name:</p>
+		<input id="pokemon1" type="text" placeholder="Try: Pikachu">
+		<p>Select your Pokemon's level (lv.1-100):</p>
+		<input id="level1" type="range" min="1" max="100">
+	</div>
+	
+	<div class="column">
+		<p>Enter the name of an opponent Pokemon:</p>
+		<input id="pokemon2" type="text" placeholder="Try: Charizard">
+		<p>Select opponent Pokemon's level (lv.1-100):</p>
+		<input id="level2" type="range" min="1" max="100">
+	</div>
+</div>
+<div id="row">
+<button onclick="choosePokemon()">BATTLE!</button>
+<button onclick="randomBattle()">RANDOM BATTLE!</button>
+</div>
+<div id="pokedex">
+<br><br><br>
+<div id="battlefield" class="row">
+	 <img id="img1" height="300px"> 
+	 <img id="img2" height="300px"> 
+</div>
+<br><br><br><br><br><br>
+<div id="battleTextBox" class="textBox">
+<!-- this will be the pokemon style textbox that describes the battle going on. -->
+	<p id="0"></p>
+	<p id="1"></p>
+	<p id="2"></p>
+	<p id="3"></p>
+	<p id="4"></p>
+	<p id="5"></p>
+	<p id="6"></p>
+	<p id="7"></p>
+	<p id="8"></p>
+	<p id="9"></p>
+</div>
+</div> 
+<!-- end of pokedex div. -->
+<!-- <p>Enable manual text scrolling?</p> -->
+<!-- <form> -->
+	<!-- <input type="radio" id="off" name="scrolling" value="off"> -->
+	<!-- <label for="off">Off</label><br> -->
+	<!-- <input type="radio" id="on" name="scrolling" value="on"> -->
+	<!-- <label for="on">On</label><br> -->
+<!-- </form> -->
+<button id="manualScrollEnabled" onclick="manualScrollEnabled()">Turn on manual scrolling</button>
+<button id="manualScroll" onclick="manualScroll()">Next Line</button>
+
+<div class="textBox">
+<!-- this textbox will display info about site usage. -->
+	<h3>About the site:</h3>
+	<p>
+	This website allows you to see the predicted outcome of Pokemon matchups.<br>
+	See how a battle would play out based on type, level, moves, items etc.<br><br>
+	<u>To use the site:</u><br>
+	Try inputing different Pokemon matchups of your liking in the text-boxes 
+	and try seeing how changing their level impacts the outcome of the battle.<br><br>
+	Here are a couple examples:
+	<ul>
+		<li>Pikachu vs. Charizard</li>
+		<li>Bulbasaur vs. Squirtle</li>
+		<li>Tepig vs. Snivy</li>
+	</ul>
+	
+	Once you've entered a valid matchup, click on the "battle" button to initiate a fight. 
+	Alternatively you can click the "random battle" button to start a battle between two
+	random Pokemon.<br><br>
+	
+	<u>Site settings:</u><br>
+	By default, the battle text automatically scrolls just like in the official games but you can click the "turn on manual scroll"
+	button to scroll through the text manually when clicking the "Next line" button.<br><br>
+	
+	Also, if you wish to see how the Pokedex works on the inside, you can click the "Stats for nerds" button to see the JSON
+	data for the Pokemon currently in battle.<br><br>
+	
+	Note that some of the Pokemon in this database may be missing images or some info which could impact matchups.
+	There are also no Gen 8 Pokemon (Sorry Sobble :0).<br><br>
+	
+	Lastly, feel free to rezise and zoom in your browser window for better results.
+	</p>
+</div>
+
+<!-- I couldn't get the results returned from .get so here is a not so fancy solution. -->
+<div id="resultStorage">
+	<p id="resultStorage1">uDamageIn</p>
+	<p id="resultStorage2">uDamageOut</p>
+</div>
+<button onclick="statsEnabled()">Show stats for nerds</button>
+
+<div class="textBox" id="stats">
+<!-- this textbox will display the raw JSON data if the stats for nerds button is toggled. -->
+	<h3>Test JSON Request:</h3>
+	<p id="testRequest">JSON data will show up here if you are currently testing the implementation of a RESTful request.</p>
+	
+	<h3 id="showName1">Please initiate a battle with a Pokemon to see their JSON data.</h3>
+	<div id="showStats1">
+		<!-- The JSON data from the js script will go here. -->
+	</div>
+	<h3 id="showName2"></h3>
+	<div id="showStats2">
+		<!-- The JSON data from the js script will go here. -->
+	</div>
+</div>
+</div>
+<!-- end of all div. -->
+
+</body>
+</html>
